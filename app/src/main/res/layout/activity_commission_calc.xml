@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".CommissionCalculationActivity">
+
+    <TextView
+        android:id="@+id/labelSelectRepresentative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Sales Representative:"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerRepresentative"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/labelSelectRepresentative"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:minHeight="48dp"/>
+
+    <EditText
+        android:id="@+id/editTextMonth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Month (1-12)"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerRepresentative"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"/>
+
+    <EditText
+        android:id="@+id/editTextYear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Year (e.g., 2024)"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerRepresentative"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <EditText
+        android:id="@+id/editTextSalesQuantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Sales Quantity"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMonth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+        
+    <!-- EditText for Region of Sale -->
+    <EditText
+        android:id="@+id/editTextSaleRegion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Region of Sale"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSalesQuantity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/buttonCalculateSaveCommission"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calculate &amp; Save Commission"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSaleRegion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/textViewCalculatedCommission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculated Commission: "
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalculateSaveCommission"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
